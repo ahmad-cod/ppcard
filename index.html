@@ -5,37 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
   
   <title>Frontend Mentor | Product preview card component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        screens: {
+          'sm': '376px'
+        },
+        extend: {
+          fontFamily: {
+            'fraunces': 'Fraunces, serif'
+          },
+          colors: {
+            darkCyan: 'hsl(158, 36%, 37%)',
+            cream: 'hsl(30, 38%, 92%)',
+            veryDarkBlue: 'hsl(212, 21%, 14%)',
+            darkGrayishBlue: 'hsl(228, 12%, 48%)',
+            
+          }
+        }
+      }
+    }
+  </script>
 
 </head>
-<body>
-<main>
-  <section>
+<body class="bg-cream grid items-center place-content-center h-screen">
+<main class="m-4 sm:flex sm:justify-between sm:items-center sm:max-w-[550px] sm:mx-auto bg-white sm:gap-x-4">
+  <section class="basis-1/2">
     <picture>
       <source media="(min-width: 376px)" srcset="./images/image-product-desktop.jpg">
       <img src="./images/image-product-mobile.jpg" alt="product image">
     </picture>
   </section>
-  <section>
-    <p class="">Perfume</p>
-    <h1 class="">Gabrielle Essence Eau De Parfum</h1>
-    <p class="">
+  <section class="p-4 flex flex-col gap-y-4 mr-4 basis-1/2">
+    <p class="text-darkGrayishBlue uppercase tracking-[0.23rem] text-[0.8rem]">Perfume</p>
+    <h1 class="text-3xl font-bold font-fraunces">Gabrielle Essence Eau De Parfum</h1>
+    <p class="text-darkGrayishBlue text-[0.8rem]">
       A floral, solar and voluptuous interpretation composed by Olivier Polge, 
       Perfumer-Creator for the House of CHANEL.
     </p>
-    <div class="">
-      <span>$149.99</span>
-      <span>$169.99</span>
+    <div class="relative">
+      <span class="text-3xl text-darkCyan font-bold font-fraunces mr-4">$149.99</span>
+      <span class="line-through text-darkGrayishBlue text-[0.78rem] absolute top-[0.4rem]">$169.99</span>
     </div>
-    <button class="">
+    <button class="bg-darkCyan flex items-center justify-center w-full py-2 rounded-lg
+       text-white gap-x-3 font-semibold text-[0.8rem]">
       <img src="./images/icon-cart.svg" alt="cart icon">
       Add to Cart
     </button>
@@ -45,7 +63,7 @@
   
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://ahmadaroyehun.netlify.app">Ahmad Aroyehun</a>.
   </footer>
 </body>
 </html>
